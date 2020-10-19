@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Bahnschrift SemiBold";
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    /* background: rgb(247, 255, 255); */
+    background: linear-gradient(45deg, #86e3ce, #d0e6a5);
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    margin-top: 100px;
+    width: 280px;
+    height: 420px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .persent {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 15px;
+}
+
+.card .persent svg {
+    width: 170px;
+    height: 170px;
+}
+
+.card .persent svg.circle circle {
+    fill: none;
+    stroke-width: 8;
+    stroke: rgb(11, 181, 142);
+    transform: translate(5px, 5px);
+    stroke-dasharray: 503;
+    stroke-dashoffset: 0;
+    /* animation-duration: 2s;
+    animation-name: line-circle; */
+}
+
+.card .persent svg.circle circle.animation {
+    stroke-dasharray: 503;
+    stroke-dashoffset: 0;
+    animation-duration: 2s;
+    animation-name: line-circle;
+}
+
+@keyframes line-circle {
+    0% {
+        stroke-dashoffset: 503;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes appearence {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appearence-move {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*  Inside Circle persent ------------------- */
+.card .persent .inside-circle {
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    transform: translate(3px, 5px);
+}
+
+/* Number ------- */
+.card .persent .inside-circle .number {
+    font-family: "Bahnschrift SemiBold";
+    color: rgb(74, 141, 184);
+    font-size: 60px;
+    animation-name: appearence;
+    animation-duration: 1s;
+}
+
+.card .persent .inside-circle .number span {
+    font-size: 32px;
+    font-family: "Bahnschrift Light";
+}
+
+/* Play - pause button */
+.card .persent a {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 80px;
+    height: 80px;
+}
+
+.card .persent a svg {
+    width: 80px;
+    height: 80px;
+}
+
+.card .persent .play-icon svg{
+    transform: translateX(5px);
+    fill:#038176;
+    transition: 0.3s;
+    animation-name: appearence;
+    animation-duration: 1.5s;
+}
+
+
+.card .persent .play-icon svg:hover {
+    fill: rgb(74, 141, 184);
+}
+
+.card .persent .pause-icon svg{
+    fill:#038176;
+    transition: 0.3s;
+    animation-name: appearence;
+    animation-duration: 1.5s;
+}
+
+.card .persent .time-out img{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Logo ---------------------------- */
+.card .logo {
+    text-align: center;
+    animation-name: appearence;
+    animation-duration: 1s;
+}
+
+.card .logo h2 {
+    font-size: 32px;
+    color: rgb(74, 141, 184);
+}
+
+.card .logo h5 {
+    font-size: 17px;
+    color: rgb(118, 113, 113);
+}
+
+.card .time-box {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    animation-name: appearence-move;
+    animation-duration: 1s;
+}
+
+.card .time-box .input-text {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Malgun Gothic";
+    color: rgb(118, 113, 113);
+
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.card .time-box .input-range {
+    height: 1px;
+    background: rgb(217, 217, 217);
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.card .time-box .input-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgb(127, 127, 127);
+    background: white;
+}
+
+.disabled {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
